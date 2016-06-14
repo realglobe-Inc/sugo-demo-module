@@ -1,6 +1,6 @@
 {
   "name": "sugo-demo-interface",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Demo SUGO-Interface",
   "main": "lib",
   "scripts": {
