@@ -1,6 +1,6 @@
 {
   "name": "sugo-demo-interface",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Demo SUGO-Interface",
   "main": "lib",
   "scripts": {
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/realglobe-Inc/sugo-demo-interface#readme",
   "dependencies": {
-    "co": "^4.6.0"
+    "co": "^4.6.0",
+    "debug": "^2.2.0"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
