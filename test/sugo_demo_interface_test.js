@@ -6,6 +6,8 @@
 
 const sugoDemoInterface = require('../lib/sugo_demo_interface.js')
 const assert = require('assert')
+const sgSchemas = require('sg-schemas')
+const sgValidator = require('sg-validator')
 const co = require('co')
 
 describe('sugo-demo-interface', () => {
@@ -20,7 +22,10 @@ describe('sugo-demo-interface', () => {
   it('Sugo demo interface', () => co(function * () {
     let interface_ = sugoDemoInterface({})
     assert.ok(interface_)
-    assert.ok(interface_.$spec)
+
+    let { $spec } = interface_
+    let specError = sgValidator(sgSchemas.interfaceSpec).validate($spec)
+    assert.ok(!specError)
   }))
 })
 
