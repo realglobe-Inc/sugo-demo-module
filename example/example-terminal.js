@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Example usage from terminal
+ * Example control from remote terminal
  */
 'use strict'
 
@@ -9,16 +9,11 @@ const co = require('co')
 const assert = require('assert')
 const sugoTerminal = require('sugo-terminal')
 
-const CLOUD_URL = 'http://my-sugo-cloud.example.com/terminals'
-const TARGET_SPOT_ID = 'my-spot-01'
-
 co(function * () {
-  let terminal = sugoTerminal(CLOUD_URL, {})
+  let terminal = sugoTerminal('http://my-sugo-cloud.example.com/terminals', {})
+  let spot = terminal.connect('my-spot-01')
 
-  // Connect to the spot
-  let spot = terminal.connect(TARGET_SPOT_ID)
-
-  // Get the interface
+  // Access to the interface
   let myInterface01 = spot.myInterface01()
 
   // Send ping
@@ -26,4 +21,3 @@ co(function * () {
   assert.ok(pong)
 
 }).catch((err) => console.error(err))
-
