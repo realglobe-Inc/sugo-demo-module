@@ -8,7 +8,7 @@ const index = require('../lib/index.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('sugo-demo-interface', () => {
+describe('index', () => {
   before(() => co(function * () {
 
   }))
@@ -17,7 +17,7 @@ describe('sugo-demo-interface', () => {
 
   }))
 
-  it('Sugo demo interface', () => co(function * () {
+  it('Create instance from index.', () => co(function * () {
     let interface_ = index({})
     assert.ok(interface_)
   }))

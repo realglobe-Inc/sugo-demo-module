@@ -120,7 +120,6 @@ co(function * () {
   // Send ping
   let pong = yield myInterface01.ping()
   assert.ok(pong)
-
 }).catch((err) => console.error(err))
 
 ```
