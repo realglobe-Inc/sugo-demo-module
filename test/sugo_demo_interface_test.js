@@ -27,6 +27,12 @@ describe('sugo-demo-interface', () => {
     let specError = sgValidator(sgSchemas.interfaceSpec).validate($spec)
     assert.ok(!specError)
   }))
+
+  it('Ping/Pong', () => co(function * () {
+    let interface_ = sugoDemoInterface({})
+    let pong = yield interface_.ping({ params: [] })
+    assert.ok(pong)
+  }))
 })
 
 /* global describe, before, after, it */

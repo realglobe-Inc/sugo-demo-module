@@ -102,6 +102,24 @@ co(function * () {
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
+<!-- Section from "doc/guides/03.Methods.md.hbs" Start -->
+
+<a name="section-doc-guides-03-methods-md"></a>
+Methods
+---------
+
+<a name="ping"></a>
+### ping(pong) -> <code>string</code>
+
+Test the reachability of a interface.
+
+| Param | Type | Description |
+| ----- | ---- | ----------- |
+| pong  | <code>string</code> | Pong message to return |
+
+
+<!-- Section from "doc/guides/03.Methods.md.hbs" End -->
+
 
 <!-- Sections Start -->
 
