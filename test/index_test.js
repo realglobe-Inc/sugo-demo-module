@@ -17,7 +17,7 @@ describe('index', () => {
 
   }))
 
-  it('Create instance from index.', () => co(function * () {
+  it('Create instance from index', () => co(function * () {
     let interface_ = index({})
     assert.ok(interface_)
   }))
