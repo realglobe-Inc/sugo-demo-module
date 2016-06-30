@@ -28,10 +28,21 @@ describe('sugo-demo-interface', () => {
     assert.ok(!specError)
   }))
 
-  it('Take ping-pong', () => co(function * () {
+  it('Try ping-pong', () => co(function * () {
     let interface_ = sugoDemoInterface({})
-    let pong = yield interface_.ping({ params: [] })
-    assert.ok(pong)
+    let pong = yield interface_.ping({ params: [ 'pong' ] })
+    assert.equal(pong, 'pong')
+  }))
+
+  it('Do assert', () => co(function * () {
+    let interface_ = sugoDemoInterface({})
+    let caught
+    try {
+      yield interface_.assert({})
+    } catch (err) {
+      caught = err
+    }
+    assert.ok(!caught)
   }))
 })
 

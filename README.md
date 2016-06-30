@@ -168,6 +168,10 @@ Test the reachability of a interface.
 | Param | Type | Description |
 | ----- | ---- | ----------- |
 | pong  | <code>string</code> | Pong message to return |
+<a name="assert"></a>
+### assert() -> <code>boolean</code>
+
+Test if the spot fulfills system requirements
 
 
 <!-- Section from "doc/guides/03.Methods.md.hbs" End -->
