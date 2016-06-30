@@ -2,8 +2,12 @@ Methods
 ---------
 
 {{#each vars.spec.methods}}
-<a name="{{@key}}"></a>
-### {{{@key}}}({{#each params}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}){{#if return}} -> <code>{{{return.type}}}</code>{{/if}}
++ [.{{{@key}}}({{#each params}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}){{#if return}} -> {{{return.type}}}{{/if}}](#method-{{spinalcase @key}})
+{{/each}}
+
+{{#each vars.spec.methods}}
+<a name="method-{{spinalcase @key}}"></a>
+### .{{{@key}}}({{#each params}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}){{#if return}} -> <code>{{{return.type}}}</code>{{/if}}
 
 {{{desc}}}
 {{#if params}}

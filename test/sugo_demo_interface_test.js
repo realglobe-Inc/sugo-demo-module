@@ -44,6 +44,19 @@ describe('sugo-demo-interface', () => {
     }
     assert.ok(!caught)
   }))
+
+  it('Compare methods with spec', () => co(function * () {
+    let interface_ = sugoDemoInterface({})
+    let { $spec } = interface_
+    let implemented = Object.keys(interface_).filter((name) => !/^[\$_]/.test(name))
+    let described = Object.keys($spec.methods).filter((name) => !/^[\$_]/.test(name))
+    for (let name of implemented) {
+      assert.ok(!!~described.indexOf(name), `${name} method should be described in spec`)
+    }
+    for (let name of described) {
+      assert.ok(!!~implemented.indexOf(name), `${name} method should be implemented`)
+    }
+  }))
 })
 
 /* global describe, before, after, it */
