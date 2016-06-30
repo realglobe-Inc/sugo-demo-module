@@ -124,7 +124,7 @@ co(function * () {
 
 ```
 
-Then, call the interface from remote url.
+Then, call the interface from remote terminal.
 
 ```javascript
 #!/usr/bin/env node
@@ -159,6 +159,8 @@ co(function * () {
 <a name="section-doc-guides-03-methods-md"></a>
 Methods
 ---------
+
+The following methods are available from remote terminals for the interface.
 
 + [.ping(pong) -> string](#method-ping)
 + [.assert() -> boolean](#method-assert)
