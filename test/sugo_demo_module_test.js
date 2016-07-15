@@ -30,7 +30,7 @@ describe('sugo-demo-module', () => {
 
   it('Try ping-pong', () => co(function * () {
     let module = sugoDemoModule({})
-    let pong = yield module.ping({ params: [ 'pong' ] })
+    let pong = yield module.ping('pong')
     assert.equal(pong, 'pong')
   }))
 
@@ -47,7 +47,7 @@ describe('sugo-demo-module', () => {
 
   it('Compare methods with spec', () => co(function * () {
     let module = sugoDemoModule({})
-    let { $spec } = module
+    let { $spec } = module1
     let implemented = Object.keys(module).filter((name) => !/^[\$_]/.test(name))
     let described = Object.keys($spec.methods).filter((name) => !/^[\$_]/.test(name))
     for (let name of implemented) {
