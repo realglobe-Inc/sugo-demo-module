@@ -97,7 +97,7 @@ $ npm install sugo-demo-module --save
 Usage
 ---------
 
-Register interface to SUGO-Spot
+Register a module to actor
 
 ```javascript
 #!/usr/bin/env node
@@ -108,25 +108,48 @@ Register interface to SUGO-Spot
 'use strict'
 
 const sugoDemoModule = require('sugo-demo-module')
-const sugoSpot = require('sugo-actors')
+const sugoActor = require('sugo-actor')
 const co = require('co')
 
 co(function * () {
-  let actors = sugoSpot('http://my-sugo-cloud.example.com/actorss', {
-    key: 'my-actors-01',
-    interfaces: {
-      // Register the interface
+  let actor = sugoActor('http://my-sugo-cloud.example.com/actors', {
+    key: 'my-actor-01',
+    modules: {
+      // Register the module
       module01: sugoDemoModule({})
     }
   })
-  yield actors.connect()
+  yield actor.connect()
 }).catch((err) => console.error(err))
 
 ```
 
-Then, call the interface from a remote caller.
+Then, call the module from a remote caller.
 
 ```javascript
+#!/usr/bin/env node
+
+/**
+ * Example control from a remote caller
+ */
+'use strict'
+
+const co = require('co')
+const assert = require('assert')
+const sugoCaller = require('sugo-caller')
+
+co(function * () {
+  let caller = sugoCaller('http://my-sugo-cloud.example.com/callers', {})
+  let actor = caller.connect('my-actor-01')
+
+  // Access to the module
+  let module01 = actor.module01()
+
+  // Send ping
+  let pong = yield module01.ping()
+  assert.ok(pong)
+
+}).catch((err) => console.error(err))
 
 ```
 
