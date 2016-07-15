@@ -1,16 +1,16 @@
 /**
- * Test case for sugoDemoInterface.
+ * Test case for sugoDemoModule.
  * Runs with mocha.
  */
 'use strict'
 
-const sugoDemoInterface = require('../lib/sugo_demo_interface.js')
+const sugoDemoModule = require('../lib/sugo_demo_module.js')
 const assert = require('assert')
 const sgSchemas = require('sg-schemas')
 const sgValidator = require('sg-validator')
 const co = require('co')
 
-describe('sugo-demo-interface', () => {
+describe('sugo-demo-module', () => {
   before(() => co(function * () {
 
   }))
@@ -20,25 +20,25 @@ describe('sugo-demo-interface', () => {
   }))
 
   it('Get interface spec', () => co(function * () {
-    let interface_ = sugoDemoInterface({})
-    assert.ok(interface_)
+    let module = sugoDemoModule({})
+    assert.ok(module)
 
-    let { $spec } = interface_
-    let specError = sgValidator(sgSchemas.interfaceSpec).validate($spec)
+    let { $spec } = module
+    let specError = sgValidator(sgSchemas.moduleSpec).validate($spec)
     assert.ok(!specError)
   }))
 
   it('Try ping-pong', () => co(function * () {
-    let interface_ = sugoDemoInterface({})
-    let pong = yield interface_.ping({ params: [ 'pong' ] })
+    let module = sugoDemoModule({})
+    let pong = yield module.ping({ params: [ 'pong' ] })
     assert.equal(pong, 'pong')
   }))
 
   it('Do assert', () => co(function * () {
-    let interface_ = sugoDemoInterface({})
+    let module = sugoDemoModule({})
     let caught
     try {
-      yield interface_.assert({})
+      yield module.assert({})
     } catch (err) {
       caught = err
     }
@@ -46,9 +46,9 @@ describe('sugo-demo-interface', () => {
   }))
 
   it('Compare methods with spec', () => co(function * () {
-    let interface_ = sugoDemoInterface({})
-    let { $spec } = interface_
-    let implemented = Object.keys(interface_).filter((name) => !/^[\$_]/.test(name))
+    let module = sugoDemoModule({})
+    let { $spec } = module
+    let implemented = Object.keys(module).filter((name) => !/^[\$_]/.test(name))
     let described = Object.keys($spec.methods).filter((name) => !/^[\$_]/.test(name))
     for (let name of implemented) {
       assert.ok(!!~described.indexOf(name), `${name} method should be described in spec`)

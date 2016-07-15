@@ -1,16 +1,16 @@
 {
-  "name": "sugo-demo-interface",
-  "version": "1.1.13",
-  "description": "Demo SUGO-Interface",
+  "name": "sugo-demo-module",
+  "version": "2.0.0",
+  "description": "Demo of SUGO-Module",
   "main": "lib",
   "scripts": {
     "test": "./ci/test.js",
     "prepublish": "./ci/build.js"
   },
-  "repository": "realglobe-Inc/sugo-demo-interface",
+  "repository": "realglobe-Inc/sugo-demo-module",
   "keywords": [
     "SUGOS",
-    "interface"
+    "module"
   ],
   "author": {
     "name": "Taka Okunishi",
@@ -19,9 +19,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/realglobe-Inc/sugo-demo-interface/issues"
+    "url": "https://github.com/realglobe-Inc/sugo-demo-module/issues"
   },
-  "homepage": "https://github.com/realglobe-Inc/sugo-demo-interface#readme",
+  "homepage": "https://github.com/realglobe-Inc/sugo-demo-module#readme",
   "dependencies": {
     "co": "^4.6.0",
     "debug": "^2.2.0",
@@ -31,10 +31,10 @@
     "ape-tmpl": "^5.0.12",
     "coz": "^6.0.5",
     "injectmock": "^2.0.0",
-    "sg-schemas": "^1.1.4",
+    "sg-schemas": "^2.0.3",
     "sg-validator": "^1.0.0",
-    "sugo-ci-interface": "^1.0.0",
-    "sugos-assets": "^1.1.13"
+    "sugo-ci-module": "^2.0.1",
+    "sugos-assets": "^2.0.1"
   },
   "engines": {
     "node": ">=6",

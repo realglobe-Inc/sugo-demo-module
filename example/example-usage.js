@@ -5,17 +5,17 @@
  */
 'use strict'
 
-const sugoDemoInterface = require('sugo-demo-interface')
-const sugoSpot = require('sugo-spot')
+const sugoDemoModule = require('sugo-demo-module')
+const sugoSpot = require('sugo-actors')
 const co = require('co')
 
 co(function * () {
-  let spot = sugoSpot('http://my-sugo-cloud.example.com/spots', {
-    key: 'my-spot-01',
+  let actors = sugoSpot('http://my-sugo-cloud.example.com/actorss', {
+    key: 'my-actors-01',
     interfaces: {
       // Register the interface
-      myInterface01: sugoDemoInterface({})
+      module01: sugoDemoModule({})
     }
   })
-  yield spot.connect()
+  yield actors.connect()
 }).catch((err) => console.error(err))
