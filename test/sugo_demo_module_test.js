@@ -47,7 +47,7 @@ describe('sugo-demo-module', () => {
 
   it('Compare methods with spec', () => co(function * () {
     let module = sugoDemoModule({})
-    let { $spec } = module1
+    let { $spec } = module
     let implemented = Object.keys(module).filter((name) => !/^[\$_]/.test(name))
     let described = Object.keys($spec.methods).filter((name) => !/^[\$_]/.test(name))
     for (let name of implemented) {
