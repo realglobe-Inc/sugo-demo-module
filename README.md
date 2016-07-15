@@ -97,7 +97,7 @@ $ npm install sugo-demo-module --save
 Usage
 ---------
 
-Register a module to actor
+Register a module to actor.
 
 ```javascript
 #!/usr/bin/env node
