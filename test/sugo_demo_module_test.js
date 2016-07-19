@@ -19,7 +19,7 @@ describe('sugo-demo-module', () => {
 
   }))
 
-  it('Get interface spec', () => co(function * () {
+  it('Get module spec', () => co(function * () {
     let module = sugoDemoModule({})
     assert.ok(module)
 

@@ -106,7 +106,7 @@ Register a module to actor.
 #!/usr/bin/env node
 
 /**
- * Example usage of the terminal
+ * Example usage of the caller
  */
 'use strict'
 
@@ -165,7 +165,7 @@ co(function * () {
 Methods
 ---------
 
-The following methods are available from remote callers for the interface.
+The following methods are available from remote callers for the module.
 
 + [.ping(pong) -> string](#method-ping)
 + [.assert() -> boolean](#method-assert)
@@ -173,7 +173,7 @@ The following methods are available from remote callers for the interface.
 <a name="method-ping"></a>
 ### .ping(pong) -> <code>string</code>
 
-Test the reachability of an interface.
+Test the reachability of a module.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
@@ -182,7 +182,7 @@ Test the reachability of an interface.
 <a name="method-assert"></a>
 ### .assert() -> <code>boolean</code>
 
-Test if the spot fulfills system requirements
+Test if the actor fulfills system requirements
 
 
 
