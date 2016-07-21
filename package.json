@@ -1,6 +1,6 @@
 {
   "name": "sugo-demo-module",
-  "version": "3.0.4",
+  "version": "3.0.6",
   "description": "Demo of SUGO-Module",
   "main": "lib",
   "browser": "sims/browser",
