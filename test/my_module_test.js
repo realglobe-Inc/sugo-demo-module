@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const DemoModule = require('../lib/demo_module.js')
+const MyModule = require('../lib/my_module.js')
 const assert = require('assert')
 const co = require('co')
 const sgSchemas = require('sg-schemas')
@@ -22,7 +22,7 @@ describe('demo-module', function () {
   }))
 
   it('Get module spec', () => co(function * () {
-    let module = new DemoModule({})
+    let module = new MyModule({})
     assert.ok(module)
 
     let { $spec } = module
@@ -31,13 +31,13 @@ describe('demo-module', function () {
   }))
 
   it('Try ping-pong', () => co(function * () {
-    let module = new DemoModule({})
+    let module = new MyModule({})
     let pong = yield module.ping('pong')
     assert.equal(pong, 'pong')
   }))
 
   it('Do assert', () => co(function * () {
-    let module = new DemoModule({})
+    let module = new MyModule({})
     let caught
     try {
       yield module.assert({})
@@ -48,9 +48,9 @@ describe('demo-module', function () {
   }))
 
   it('Compare methods with spec', () => co(function * () {
-    let module = new DemoModule({})
+    let module = new MyModule({})
     let { $spec } = module
-    let implemented = Object.getOwnPropertyNames(DemoModule.prototype)
+    let implemented = Object.getOwnPropertyNames(MyModule.prototype)
       .filter((name) => !/^[\$_]/.test(name))
       .filter((name) => !~[ 'constructor' ].indexOf(name))
     let described = Object.keys($spec.methods).filter((name) => !/^[\$_]/.test(name))

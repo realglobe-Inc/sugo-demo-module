@@ -110,7 +110,7 @@ Register a module to actor.
  */
 'use strict'
 
-const { DemoModule } = require('sugo-demo-module')
+const { MyModule } = require('sugo-demo-module')
 const sugoActor = require('sugo-actor')
 const co = require('co')
 
@@ -119,7 +119,7 @@ co(function * () {
     key: 'my-actor-01',
     modules: {
       // Register the module
-      module01: new DemoModule({})
+      module01: new MyModule({})
     }
   })
   yield actor.connect()

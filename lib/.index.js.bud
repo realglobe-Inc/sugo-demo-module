@@ -12,9 +12,8 @@ module.exports = {
   mode: '444',
   tmpl: moduleIndex,
   data: {
-    name: 'DemoModule',
-    sub: {
-    },
+    name: 'MyModule',
+    sub: {},
     pkg
   }
 }
