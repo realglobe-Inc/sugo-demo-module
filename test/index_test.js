@@ -25,7 +25,7 @@ describe('index', () => {
   }))
 
   it('Eval browser index', () => co(function * () {
-    let index = require('../sims/browser')
+    let index = require('../shim/browser')
     assert.ok(index)
   }))
 })
