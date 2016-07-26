@@ -1,6 +1,6 @@
 {
   "name": "sugo-demo-module",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "Demo of SUGO-Module",
   "main": "lib",
   "browser": "shim/browser",
